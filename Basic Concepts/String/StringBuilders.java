@@ -1,6 +1,6 @@
 package String;
 
-/* Replce Character */
+/* Replace Character */
 
 public class StringBuilders {
     public static void main(String args[]) {
