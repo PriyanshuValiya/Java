@@ -68,7 +68,7 @@ public class Basic {
         if(size == 0) {
             System.out.println("LL is empty");
             return Integer.MIN_VALUE;
-        } else if(size == 1) {
+        } else if (size == 1) {
             int val = head.data;
             head = tail = null;
             size = 0;
@@ -289,12 +289,11 @@ public class Basic {
             if(head1.data <= head2.data) {
                 temp.next = head1;
                 head1 = head1.next;
-                temp = temp.next;
             } else {
                 temp.next = head2;
                 head2 = head2.next;
-                temp = temp.next;
             }
+            temp = temp.next;
         }
 
         while(head1 != null) {
@@ -333,10 +332,12 @@ public class Basic {
         //find mid
         Node slow = head;
         Node fast = head.next;
+
         while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
+
         Node mid = slow;
 
         //reverse 2nd half
@@ -356,7 +357,7 @@ public class Basic {
         Node right = prev;
         Node nextL, nextR;
 
-        //alt merge - zig-zag merge
+            //alt merge - zig-zag merge
         while(left != null && right != null) {
             nextL = left.next;
             left.next = right;

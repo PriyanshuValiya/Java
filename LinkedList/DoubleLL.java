@@ -38,7 +38,7 @@ public class DoubleLL {
         System.out.println("null");
     }
 
-    //remove - removeLast
+    //remove 
     public int removeFirst() {
         if(head == null) {
             System.out.println("DLL is empty");
