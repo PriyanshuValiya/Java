@@ -33,7 +33,6 @@ public class DeleteNode {
 
         public void skipNode(Node head, int M, int N) {
             Node temp = head;
-           // int count = 1;
 
             while(temp != null) {
              if(temp.next == null) {
@@ -46,17 +45,6 @@ public class DeleteNode {
                     System.out.println(temp.data);
                 }
              }
-
-             
-          /*  head = head.next;
-
-            for(int i = 1; i <= N; i++) {
-                Node dummy = head;
-                head = head.next;
-            }
-
-            temp = temp.next;
-            temp = head; */
             }
         }
 
@@ -91,7 +79,7 @@ public class DeleteNode {
             ll.addFirst(1);
     
            ll.print();
-           ll.skipNode(head, 2, 2);
+           ll.skipNode(head, 2, 2);System.out.println();
            ll.print();
         }
 }

@@ -41,7 +41,7 @@ public class Basic {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.println(" Null");
+        System.out.println("Null");
     }
 
     public void add(int idx, int data) {
@@ -59,7 +59,7 @@ public class Basic {
             i++;
         }
 
-        //i = idx-1; temp -> prev
+        // i = idx-1; temp -> prev
         newNode.next = temp.next;
         temp.next = newNode;
     }
@@ -90,13 +90,13 @@ public class Basic {
             size = 0;
             return val;
         }
-        //prev : i = size-2
+        // prev : i = size-2
         Node prev = head;
         for(int i=0; i<size-2; i++) {
             prev = prev.next;
         }
 
-        int val = prev.next.data; //tail.data
+        int val = prev.next.data; // tail.data
         prev.next = null;
         tail = prev;
         size--;
@@ -127,7 +127,9 @@ public class Basic {
         if(head.data == key) {
             return 0;
         }
+
         int idx = helper(head.next, key);
+
         if(idx == -1) {
             return -1;
         }
@@ -139,7 +141,7 @@ public class Basic {
         return helper(head, key);
     }
 
-    public void reverse() {//O(n)
+    public void reverse() { //O(n)
         Node prev = null;
         Node curr = tail = head;
         Node next;
@@ -154,7 +156,7 @@ public class Basic {
     }
 
     public void deleteNthfromEnd(int n) {
-        //calculate size
+        // Calculate Size
         int sz = 0;
         Node temp = head;
         while(temp != null) {
@@ -167,7 +169,7 @@ public class Basic {
             return;
         }
 
-        //sz-n
+        // sz - n
         int i = 1;
         int iToFind = sz-n;
         Node prev = head;
@@ -180,26 +182,26 @@ public class Basic {
         return;
     }
 
-    //Slow-Fast Approach
-    public Node findMid(Node head) { //helper
+    // Slow-Fast Approach
+    public Node findMid(Node head) { // helper
         Node slow = head;
         Node fast = head;
 
         while(fast != null && fast.next != null) {
-            slow = slow.next; //+1
-            fast = fast.next.next;//+2
+            slow = slow.next; // +1
+            fast = fast.next.next;//  +2
         }
-        return slow; //slow is my midNode
+        return slow; // slow is my midNode
     }
 
     public boolean checkPalindrome() {
         if(head == null || head.next == null) {
             return true;
         }
-        //step1 - find mid
+        // Step 1 - Find Mid
         Node midNode = findMid(head);
 
-        //step2 - reverse 2nd half
+        // Step 2 - Reverse 2nd Half
         Node prev = null;
         Node curr = midNode;
         Node next;
@@ -210,10 +212,10 @@ public class Basic {
             curr = next;
         }
 
-        Node right = prev;//right half head
+        Node right = prev; // Right Half Head
         Node left = head;
 
-        //step3 - check left half & right half
+        // Step 3 - Check Left Half & Right Half
         while(right != null) {
             if(left.data != right.data) {
                 return false;
@@ -230,18 +232,18 @@ public class Basic {
         Node fast = head;
 
         while(fast != null && fast.next != null) {
-            slow = slow.next; //+1
-            fast = fast.next.next; //+2
+            slow = slow.next; // +1
+            fast = fast.next.next; // +2
             if(slow == fast) {
-                return true; //cycle exists
+                return true; // cycle exists
             }
         }
 
-        return false; //cycle doesn't exist
+        return false; // cycle doesn't exist
     }
 
     public static void removeCycle() {
-        //detect cycle
+        // detect cycle
         Node slow = head;
         Node fast = head;
         boolean cycle = false;
@@ -253,20 +255,21 @@ public class Basic {
                 break;
             }
         }
+
         if(cycle == false) {
             return;
         }
 
-        //find meeting point
+        // find meeting point
         slow = head;
-        Node prev = null; //last node
+        Node prev = null; // last node
         while(slow != fast) {
             prev = fast;
             slow = slow.next;
             fast = fast.next;
         }
 
-        //remove cycle -> last.next = null
+        // remove cycle -> last.next = null
         prev.next = null;
     }
 
@@ -316,20 +319,20 @@ public class Basic {
             return head;
         }
 
-        //find mid
+        // find mid
         Node mid = getMid(head);
-        //left & right MS
+        // left & right MS
         Node rightHead = mid.next;
         mid.next = null;
         Node newLeft = mergeSort(head);
         Node newRight = mergeSort(rightHead);
 
-        //merge
+        // merge
         return merge(newLeft, newRight);
     }
 
     public void zigZag() {
-        //find mid
+        // find mid
         Node slow = head;
         Node fast = head.next;
 
@@ -340,7 +343,7 @@ public class Basic {
 
         Node mid = slow;
 
-        //reverse 2nd half
+        // reverse 2nd half
         Node curr = mid.next;
         mid.next = null;
         Node prev = null;
@@ -357,7 +360,7 @@ public class Basic {
         Node right = prev;
         Node nextL, nextR;
 
-            //alt merge - zig-zag merge
+        // alt merge - zig-zag merge
         while(left != null && right != null) {
             nextL = left.next;
             left.next = right;
