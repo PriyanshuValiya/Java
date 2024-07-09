@@ -19,7 +19,7 @@ public class QueuesByArray {
         }
 
         public static boolean isFull() {
-            return (rear+1) % size == front;
+            return (rear + 1) % size == front;
         }
         
         // add 
@@ -33,7 +33,7 @@ public class QueuesByArray {
             front = 0;
           }
 
-          rear = (rear+1) % size;
+          rear = (rear + 1) % size;
           arr[rear] = data;
         }
 
@@ -50,7 +50,7 @@ public class QueuesByArray {
             if(front == rear) {
                 rear = front = -1;
             } else {
-                front = (front+1)%size;
+                front = (front + 1) % size;
             }
             return result;
         }

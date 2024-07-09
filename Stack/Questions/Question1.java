@@ -1,6 +1,5 @@
 // Q - To push an element at the bottom of a stack.
 
-
 import java.util.*;
 
 public class Question1 {

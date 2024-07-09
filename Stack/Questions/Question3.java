@@ -1,6 +1,5 @@
 // Q - Code to Reverse a Stack
 
-
 import java.util.*;
 
 public class Question3 {
