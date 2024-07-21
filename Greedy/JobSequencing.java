@@ -26,6 +26,7 @@ public class JobSequencing {
         
         ans.add(jobs.get(0).id);
         int time = 1;
+        
         for(int i = 1; i < jobs.size(); i++) {
             Job j = jobs.get(i);
             if(time < j.deadline) {
@@ -34,8 +35,6 @@ public class JobSequencing {
             }
         }
 
-        for(int i = 0; i < ans.size(); i++) {
-            System.out.print(ans.get(i) + " ");
-        }
+        System.out.println(ans);
     }
 }

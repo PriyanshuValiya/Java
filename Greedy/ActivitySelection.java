@@ -17,21 +17,26 @@ public class ActivitySelection {
         // Lambda function
         Arrays.sort(activity, Comparator.comparingDouble(o -> o[2]));
 
+        int maxAct = 0;
         ArrayList<Integer> ans = new ArrayList<>();
-        ans.add(0);
-        int prevEnd = end[0];
 
-        for(int i = 1; i < end.length; i++) {
-            if(start[i] >= prevEnd) {
+        maxAct = 1;
+        ans.add(activity[0][0]);
+        int prevEnd = activity[0][2];
+
+        for(int i=1; i < end.length; i++) {
+            if(activity[i][1] >= prevEnd) {
+                // activity select
+                maxAct++;
                 ans.add(i);
                 prevEnd = end[i];
             }
         }
 
-        System.out.println(ans.size());
+        System.out.println("Total Tasks : " + ans.size());
 
         for(int i = 0; i < ans.size(); i++) {
-            System.out.println(start[ans.get(i)] + "-" + end[ans.get(i)]);
+            System.out.print("A" + ans.get(i) + " ");
         }
     }
 }
