@@ -1,57 +1,36 @@
 import java.util.*;
 
 public class SimpleURL {
-    public static void pushAtBottom(Stack<Character> s, char data) {
-        if(s.isEmpty()) {
-            s.push(data);
-            return;
-        }
+    public static void simplifyPath(String path) {
+        String arr[] = path.split("/");
+        Stack<String> stack = new Stack();
+        StringBuilder sb = new StringBuilder();
 
-        char temp = s.pop();
-        pushAtBottom(s, data);
-        s.push(temp);
-    }
-
-    public static void reverse(Stack<Character> s) {
-        if(s.isEmpty()) {
-            return;
-        }
-
-        char top = s.pop();
-        reverse(s);
-        pushAtBottom(s, top);
-    }
-
-    public static void optimizedURL(String url) {
-        Stack<Character> s = new Stack<>();
-        int count = 0;
-
-        for(int i=0; i < url.length()-1; i++) {
-            s.push(url.charAt(i));
-        }
-
-        for(int i=0; i < url.length()-1; i++) {
-            char ch = url.charAt(i);
-
-            if(ch == '/' && count != 0) {
-                if(url.charAt(i+1) == ' ') {
-                    s.pop();
-                } else if(url.charAt(i+1) == '.') {
-                    while(s.pop() != '/') {
-                        s.pop();
-                    }
-                }
-            } else {
-                count++;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].trim() != "") {
+                stack.push(arr[i]);
             }
         }
 
-        reverse(s);
+        int flag = 0;
 
-        while(!s.isEmpty()) {
-            System.out.print(s.peek());
-            s.pop();
+        while (!stack.isEmpty()) {
+            String s = stack.pop();
+
+            if (s.equals("..")) {
+                flag++;
+            } else if (s.equals(".")) {
+                continue;
+            } else {
+                if (flag == 0) {
+                    sb.insert(0, "/" + s);
+                } else {
+                    flag--;
+                }
+            }
         }
+
+        System.out.println(sb);
     }
 
     public static void main(String[] args) {
@@ -59,6 +38,6 @@ public class SimpleURL {
 
         System.out.println("URL : " + url);
 
-        optimizedURL(url);
+        simplifyPath(url);
     }
 }

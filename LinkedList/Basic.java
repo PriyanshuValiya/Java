@@ -16,18 +16,18 @@ public class Basic {
     public void addFirst(int data) {
         Node newNode = new Node(data);
         size++;
-        if(head == null) { 
+        if (head == null) {
             head = tail = newNode;
             return;
         }
-        newNode.next = head; 
+        newNode.next = head;
         head = newNode;
     }
 
     public void addLast(int data) {
         Node newNode = new Node(data);
         size++;
-        if(head == null) {
+        if (head == null) {
             head = tail = newNode;
             return;
         }
@@ -37,7 +37,7 @@ public class Basic {
 
     public void print() { // O(n)
         Node temp = head;
-        while(temp != null) {
+        while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
@@ -45,7 +45,7 @@ public class Basic {
     }
 
     public void add(int idx, int data) {
-        if(idx == 0) {
+        if (idx == 0) {
             addFirst(data);
             return;
         }
@@ -53,8 +53,8 @@ public class Basic {
         size++;
         Node temp = head;
         int i = 0;
- 
-        while(i < idx-1) {
+
+        while (i < idx - 1) {
             temp = temp.next;
             i++;
         }
@@ -65,7 +65,7 @@ public class Basic {
     }
 
     public int removeFirst() {
-        if(size == 0) {
+        if (size == 0) {
             System.out.println("LL is empty");
             return Integer.MIN_VALUE;
         } else if (size == 1) {
@@ -81,10 +81,10 @@ public class Basic {
     }
 
     public int removeLast() {
-        if(size == 0) {
+        if (size == 0) {
             System.out.println("LL is empty");
             return Integer.MIN_VALUE;
-        } else if(size == 1) {
+        } else if (size == 1) {
             int val = head.data;
             head = tail = null;
             size = 0;
@@ -92,7 +92,7 @@ public class Basic {
         }
         // prev : i = size-2
         Node prev = head;
-        for(int i=0; i<size-2; i++) {
+        for (int i = 0; i < size - 2; i++) {
             prev = prev.next;
         }
 
@@ -103,50 +103,50 @@ public class Basic {
         return val;
     }
 
-    public int itrSearch(int key) { //O(n)
+    public int itrSearch(int key) { // O(n)
         Node temp = head;
         int i = 0;
 
-        while(temp != null) {
-            if(temp.data == key) { //key found
+        while (temp != null) {
+            if (temp.data == key) { // key found
                 return i;
             }
             temp = temp.next;
             i++;
         }
 
-        //key not found
+        // key not found
         return -1;
     }
 
     public int helper(Node head, int key) { // O(n)
-        if(head == null) {
+        if (head == null) {
             return -1;
         }
 
-        if(head.data == key) {
+        if (head.data == key) {
             return 0;
         }
 
         int idx = helper(head.next, key);
 
-        if(idx == -1) {
+        if (idx == -1) {
             return -1;
         }
 
-        return idx+1;
+        return idx + 1;
     }
-   
+
     public int recSearch(int key) {
         return helper(head, key);
     }
 
-    public void reverse() { //O(n)
+    public void reverse() { // O(n)
         Node prev = null;
         Node curr = tail = head;
         Node next;
 
-        while(curr != null) {
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -159,21 +159,21 @@ public class Basic {
         // Calculate Size
         int sz = 0;
         Node temp = head;
-        while(temp != null) {
+        while (temp != null) {
             temp = temp.next;
             sz++;
         }
 
-        if(n == sz) {
-            head = head.next; //removeFirst
+        if (n == sz) {
+            head = head.next; // removeFirst
             return;
         }
 
         // sz - n
         int i = 1;
-        int iToFind = sz-n;
+        int iToFind = sz - n;
         Node prev = head;
-        while(i < iToFind) {
+        while (i < iToFind) {
             prev = prev.next;
             i++;
         }
@@ -187,15 +187,15 @@ public class Basic {
         Node slow = head;
         Node fast = head;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next; // +1
-            fast = fast.next.next;//  +2
+            fast = fast.next.next;// +2
         }
         return slow; // slow is my midNode
     }
 
     public boolean checkPalindrome() {
-        if(head == null || head.next == null) {
+        if (head == null || head.next == null) {
             return true;
         }
         // Step 1 - Find Mid
@@ -205,7 +205,7 @@ public class Basic {
         Node prev = null;
         Node curr = midNode;
         Node next;
-        while(curr != null) {
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -216,8 +216,8 @@ public class Basic {
         Node left = head;
 
         // Step 3 - Check Left Half & Right Half
-        while(right != null) {
-            if(left.data != right.data) {
+        while (right != null) {
+            if (left.data != right.data) {
                 return false;
             }
             left = left.next;
@@ -226,15 +226,15 @@ public class Basic {
 
         return true;
     }
-    
-    public static boolean isCycle() { 
+
+    public static boolean isCycle() {
         Node slow = head;
         Node fast = head;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next; // +1
             fast = fast.next.next; // +2
-            if(slow == fast) {
+            if (slow == fast) {
                 return true; // cycle exists
             }
         }
@@ -247,23 +247,23 @@ public class Basic {
         Node slow = head;
         Node fast = head;
         boolean cycle = false;
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if(fast == slow) {
+            if (fast == slow) {
                 cycle = true;
                 break;
             }
         }
 
-        if(cycle == false) {
+        if (cycle == false) {
             return;
         }
 
         // find meeting point
         slow = head;
         Node prev = null; // last node
-        while(slow != fast) {
+        while (slow != fast) {
             prev = fast;
             slow = slow.next;
             fast = fast.next;
@@ -277,19 +277,19 @@ public class Basic {
         Node slow = head;
         Node fast = head.next;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        return slow; //mid node
+        return slow; // mid node
     }
 
     private Node merge(Node head1, Node head2) {
         Node mergedLL = new Node(-1);
         Node temp = mergedLL;
 
-        while(head1 != null && head2 != null) {
-            if(head1.data <= head2.data) {
+        while (head1 != null && head2 != null) {
+            if (head1.data <= head2.data) {
                 temp.next = head1;
                 head1 = head1.next;
             } else {
@@ -299,13 +299,13 @@ public class Basic {
             temp = temp.next;
         }
 
-        while(head1 != null) {
+        while (head1 != null) {
             temp.next = head1;
             head1 = head1.next;
             temp = temp.next;
         }
 
-        while(head2 != null) {
+        while (head2 != null) {
             temp.next = head2;
             head2 = head2.next;
             temp = temp.next;
@@ -315,7 +315,7 @@ public class Basic {
     }
 
     public Node mergeSort(Node head) {
-        if(head == null || head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
@@ -336,7 +336,7 @@ public class Basic {
         Node slow = head;
         Node fast = head.next;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -348,8 +348,8 @@ public class Basic {
         mid.next = null;
         Node prev = null;
         Node next;
-        
-        while(curr != null) {
+
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -361,7 +361,7 @@ public class Basic {
         Node nextL, nextR;
 
         // alt merge - zig-zag merge
-        while(left != null && right != null) {
+        while (left != null && right != null) {
             nextL = left.next;
             left.next = right;
             nextR = right.next;
@@ -371,6 +371,7 @@ public class Basic {
             right = nextR;
         }
     }
+
     public static void main(String args[]) {
         Basic ll = new Basic();
         ll.addLast(1);
