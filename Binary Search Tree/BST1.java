@@ -72,7 +72,6 @@ public class BST1 {
         } else if(root.data < val) {
             root.right = delete(root.right, val);
         } else {
-
             // case 1 : leaf node
             if(root.left == null && root.right == null) {
                 return null;

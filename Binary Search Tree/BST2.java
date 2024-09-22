@@ -36,7 +36,7 @@ public class BST2 {
         return curr;
     }
 
-        public static Node convertToBST2(ArrayList<Integer> arr, int st, int end) {
+    public static Node convertToBST2(ArrayList<Integer> arr, int st, int end) {
         if(st > end) {
             return null;
         }

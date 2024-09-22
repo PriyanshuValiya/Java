@@ -14,13 +14,13 @@ public class hashSet {
         Iterator it = cities.iterator();
 
         while(it.hasNext()){
-            System.out.println(it.next());
+            System.out.print(it.next() + " ");
         }
 
         System.out.println();
 
         for(String city : cities) {
-            System.out.println(city);
+            System.out.print(city + " ");
         }
     }    
 }
