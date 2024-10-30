@@ -1,4 +1,3 @@
-package Sorting;
 class Bubble {
     public static void printArray(int arr[]) {
         System.out.print("Sorted Array : ");

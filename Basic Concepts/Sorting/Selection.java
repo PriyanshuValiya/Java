@@ -1,4 +1,3 @@
-package Sorting;
 public class Selection {
     public static void printArray(int arr[]) {
         System.out.print("Sorted Array : ");
