@@ -7,6 +7,7 @@ public class GridWays {
         } else if(i == n || j == m) { // at boundries
             return 0;
         }
+        
         int w1 = posibleWays(i+1, j, n, m);
         int w2 = posibleWays(i, j+1, n, m);
         return w1 + w2;

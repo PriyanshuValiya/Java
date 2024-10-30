@@ -1,4 +1,5 @@
 package Sorting;
+
 public class Insertion {
     public static void printArray(int arr[]) {
         System.out.print("Sorted Array : ");

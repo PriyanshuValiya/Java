@@ -24,6 +24,7 @@ public class StackByQueue {
                 System.out.println("Empty Stack");
                 return -1;
             }
+            
             int top = -1;
 
             if(!q1.isEmpty()) {

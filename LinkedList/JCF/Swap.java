@@ -59,9 +59,6 @@ public class Swap {
             ll.addFirst(3);
             ll.addFirst(2);
             ll.addFirst(1);
-
-            // 1 -> 2 -> 3 -> 4
-            // 1 -> 
     
             ll.print();
             ll.swap(x, y);

@@ -85,6 +85,7 @@ public class Knapsack01 {
         int W = 7; 
 
         int dp[][] = new int[val.length + 1][W + 1];
+        
         for (int i = 0; i < dp.length; i++) {
             Arrays.fill(dp[i], -1);
         }

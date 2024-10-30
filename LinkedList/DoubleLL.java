@@ -10,11 +10,11 @@ public class DoubleLL {
             this.prev = null;
         }
     }
+
     public static Node head;
     public static Node tail;
     public static int size;
 
-    //add
     public void addFirst(int data) {
         Node newNode = new Node(data);
         size++;
@@ -28,7 +28,6 @@ public class DoubleLL {
         head = newNode;
     }
 
-    //print
     public void print() {
         Node temp = head;
         while(temp != null) {
@@ -38,7 +37,6 @@ public class DoubleLL {
         System.out.println("null");
     }
 
-    //remove 
     public int removeFirst() {
         if(head == null) {
             System.out.println("DLL is empty");
@@ -51,6 +49,7 @@ public class DoubleLL {
             size--;
             return val;
         }
+
         int val = head.data;
         head = head.next;
         head.prev = null; 
@@ -71,6 +70,7 @@ public class DoubleLL {
             prev = curr;
             curr = next;
         }
+        
         head = prev;
     }
 

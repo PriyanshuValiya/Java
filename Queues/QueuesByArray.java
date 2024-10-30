@@ -28,6 +28,7 @@ public class QueuesByArray {
              System.out.println("Queue is Fulled !!");
              return;
           } 
+          
           // add first element
           if(front == -1) {
             front = 0;

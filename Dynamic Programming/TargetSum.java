@@ -24,7 +24,7 @@ public class TargetSum {
             }
         }
         
-        print(dp);
+        // print(dp);
         return dp[n][sum];
     }
 
@@ -35,13 +35,12 @@ public class TargetSum {
             }
             System.out.println();
         }
-        System.out.println();
     }
 
     public static void main(String args[]) {
-
         int arr[] = { 4, 2, 7, 1, 3 };
         int sum = 10;
+        
         System.out.println(targetSum(arr, sum));
     }
 }
