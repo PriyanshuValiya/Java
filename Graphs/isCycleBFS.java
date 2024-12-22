@@ -69,7 +69,6 @@ public class isCycleBFS {
                 if(detectCycleUtil(graph, vis, e.dest, curr)) {
                     return true;
                 }
-
             }
 
             // case 1 -> next element is already visited but it's not parent of current element

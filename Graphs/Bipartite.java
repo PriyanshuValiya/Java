@@ -47,9 +47,7 @@ public class Bipartite {
         Queue<Integer> q = new LinkedList<>();
         int color[] = new int[graph.length];
 
-        for(int i = 0; i < color.length; i++) {
-            color[i] = -1; 
-        }
+        Arrays.fill(color, -1);
 
         for(int i = 0; i < graph.length; i++) { 
             if(color[i] == -1) { 

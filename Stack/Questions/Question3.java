@@ -1,6 +1,8 @@
 // Q - Code to Reverse a Stack
 
+package Questions;
 import java.util.*;
+
 
 public class Question3 {
     public static void pushAtBottom(Stack<Integer> s, int data) {

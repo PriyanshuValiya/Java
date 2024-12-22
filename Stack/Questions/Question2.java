@@ -1,6 +1,8 @@
 // Q - Reverse a String using a Stack
 
+package Questions;
 import java.util.*;
+
 
 public class Question2 {
     public static void main(String args[]) {

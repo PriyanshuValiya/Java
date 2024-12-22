@@ -1,4 +1,6 @@
+package Questions;
 import java.util.*;
+
 
 public class SimpleURL {
     public static void simplifyPath(String path) {

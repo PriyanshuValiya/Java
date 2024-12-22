@@ -10,17 +10,16 @@ public class Merge {
             return;
         }
         int mid = startIdx + (endIdx - startIdx) / 2;
-        mergeSort(arr, startIdx, mid); // Left Index
-        mergeSort(arr, mid+1, endIdx); // Right Index
+        mergeSort(arr, startIdx, mid); 
+        mergeSort(arr, mid+1, endIdx); 
         merge(arr, startIdx, mid, endIdx);
     }
 
     public static void merge(int arr[], int startIdx, int mid, int endIdx) {
         int temp[] = new int[endIdx - startIdx + 1];
-        int i = startIdx; // iterator for left part
-        int j = mid+1; // iterator for right part 
-        int k = 0; // iterator for temp arr
-
+        int i = startIdx;
+        int j = mid+1;  
+        int k = 0; 
         while(i <= mid && j <= endIdx) {
             if(arr[i] < arr[j]) {
                 temp[k] = arr[i];
