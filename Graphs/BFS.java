@@ -1,7 +1,7 @@
 package Java.Graphs;
 import java.util.*;
 
-public class Classroom {
+public class BFS {
     static class Edge {
         int src;
         int dest;

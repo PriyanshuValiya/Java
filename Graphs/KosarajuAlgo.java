@@ -1,6 +1,8 @@
 package Java.Graphs;
 import java.util.*;
 
+// Note : 
+
 public class KosarajuAlgo {
     static class Edge {
         int src;

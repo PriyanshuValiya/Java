@@ -1,5 +1,3 @@
-package Java.BackTracking;
-
 public class NQueens {
     public static boolean isSafe(char board[][], int row, int col) {
         //up

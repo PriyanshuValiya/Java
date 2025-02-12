@@ -1,5 +1,3 @@
-package Java.BackTracking;
-
 public class Basic {
     public static void printArr(int arr[]) {
         for(int i=0; i < arr.length; i++) {

@@ -2,7 +2,7 @@ package Java.Graphs;
 import java.util.*;
 
 // For Finding shortest path beetween src node and target node.
-// Note : It's doesn't work for negative weight edges.
+// Note : The Dijkstra's Algorithm is used to find the shortest path from a single source vertex to all other vertices in a weighted graph with non-negative edge weights.
 
 public class DijkstraAlgo {
     static class Edge {

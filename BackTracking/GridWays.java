@@ -1,5 +1,3 @@
-package Java.BackTracking;
-
 public class GridWays {
     public static int posibleWays(int i, int j, int n, int m) {
         if (i == n-1 && j == m-1) { // already at target cell

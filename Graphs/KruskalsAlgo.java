@@ -25,7 +25,6 @@ public class KruskalsAlgo {
         edges.add(new Edge(0, 3, 30));
         edges.add(new Edge(1, 3, 40));
         edges.add(new Edge(2, 3, 50));
-
     }
 
     static int n = 4; // n = vertices
@@ -68,7 +67,7 @@ public class KruskalsAlgo {
         int mstCost = 0;
         int count = 0;
 
-        for (int i = 0; i < V - 1; i++) {
+        for (int i = 0; count < V - 1; i++) {
             Edge e = edges.get(i);
 
             int parA = find(e.src);
@@ -77,6 +76,7 @@ public class KruskalsAlgo {
             if(parA != parB) { // if they are equal then cycle will form
                 union(e.src, e.dest);
                 mstCost += e.wt;
+                count++;
             }
         }
 

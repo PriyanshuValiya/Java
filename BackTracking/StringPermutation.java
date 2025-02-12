@@ -1,5 +1,3 @@
-package Java.BackTracking;
-
 public class StringPermutation {
     public static void permutation(String str, String ans) {
         if(str.length() == 0) {

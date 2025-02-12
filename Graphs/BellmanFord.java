@@ -1,7 +1,7 @@
 package Java.Graphs;
 import java.util.*;
 
-// Note : It's doesn't work for negative weight cycles
+// Note : The Bellman-Ford algorithm is a graph algorithm that computes the shortest paths from a single source vertex to all other vertices in a weighted graph. It can handle graphs with negative weight edges, making it more versatile than algorithms like Dijkstra's, which cannot handle negative weights.
 
 public class BellmanFord {
     static class Edge {
