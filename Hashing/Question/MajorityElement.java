@@ -1,4 +1,4 @@
-package Hashing.Question;
+// package Hashing.Question;
 import java.util.*;
 
 public class MajorityElement {
