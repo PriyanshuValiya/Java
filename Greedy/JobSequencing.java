@@ -22,6 +22,9 @@ public class JobSequencing {
         }
 
         Collections.sort(jobs, (a, b) -> b.profit - a.profit);
+
+        // jobs : {{2, 1, 40}, {3, 1, 30}, {0, 4, 20}, {1, 1, 10}}  
+
         ArrayList<Integer> ans = new ArrayList<>();
         
         ans.add(jobs.get(0).id);
