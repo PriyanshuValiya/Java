@@ -1,4 +1,3 @@
-package Java.Graphs;
 import java.util.*;
 
 // For Finding shortest path beetween src node and target node.

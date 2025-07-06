@@ -1,7 +1,6 @@
-package Java.Graphs;
 import java.util.*;
 
-// Note : 
+// Note : To find Strongly Connected Components (SCC) in a directed graph, we can use Kosaraju's algorithm.
 
 public class KosarajuAlgo {
     static class Edge {
@@ -41,6 +40,7 @@ public class KosarajuAlgo {
 
         for(int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
+
             if(!vis[e.dest]) {
                 topSort(graph, e.dest, vis, s);
             }
@@ -75,10 +75,9 @@ public class KosarajuAlgo {
             }
         }
 
-        // step 2 : making a new graph with revers edges
+        // step 2 : making a new graph with reverse edges
 
         Arrays.fill(vis, false);
-
         ArrayList<Edge> tranpose[] = new ArrayList[V];
         
         for(int i = 0; i < tranpose.length; i++) {  
@@ -93,7 +92,6 @@ public class KosarajuAlgo {
         }
 
         // Step 3
-
         while(!s.isEmpty()) {
             int curr = s.pop();
 

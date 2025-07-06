@@ -1,4 +1,3 @@
-package Java.Graphs;
 import java.util.*;
 
 public class Bipartite {

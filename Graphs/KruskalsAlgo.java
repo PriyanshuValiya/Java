@@ -1,4 +1,3 @@
-package Java.Graphs;
 import java.util.*;
 
 public class KruskalsAlgo {
@@ -15,7 +14,7 @@ public class KruskalsAlgo {
 
         @Override
         public int compareTo(Edge e2) {
-            return this.wt - e2.wt; 
+            return this.wt - e2.wt;
         }
     }
 
@@ -32,29 +31,28 @@ public class KruskalsAlgo {
     static int rank[] = new int[n];
 
     public static void initialise() {
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             par[i] = i;
         }
     }
 
     public static int find(int x) {
-        if(par[x] == x) {
+        if (par[x] == x) {
             return x;
         }
 
-        return par[x] = find(par[x]); 
+        return par[x] = find(par[x]);
     }
 
     public static void union(int a, int b) {
         int parA = find(a);
         int parB = find(b);
 
-        if(rank[parA] == rank[parB]) {
+        if (rank[parA] == rank[parB]) {
             par[parB] = parA;
             rank[parA]++;
-        } else if(rank[parA] < rank[parB]) {
+        } else if (rank[parA] < rank[parB]) {
             par[parA] = parB;
-
         } else {
             par[parB] = parA;
         }
@@ -73,7 +71,7 @@ public class KruskalsAlgo {
             int parA = find(e.src);
             int parB = find(e.dest);
 
-            if(parA != parB) { // if they are equal then cycle will form
+            if (parA != parB) { // if they are equal then cycle will form
                 union(e.src, e.dest);
                 mstCost += e.wt;
                 count++;

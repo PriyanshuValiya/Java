@@ -1,4 +1,3 @@
-package Java.Graphs;
 import java.util.*;
 
 // Note : Kahn's Algorithm is a graph algorithm used to perform a topological sort of a Directed Acyclic Graph (DAG). A topological sort is a linear ordering of vertices in a graph such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. Kahn's algorithm uses an indegree-based approach to achieve this.

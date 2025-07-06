@@ -1,5 +1,3 @@
-package Java.Graphs;
-
 public class DisjointSet {
     static int n = 7;
     static int par[] = new int[n];
