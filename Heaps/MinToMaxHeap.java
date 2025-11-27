@@ -9,6 +9,7 @@ class MinToMaxHeap {
         if (left < nums.length && nums[left] > nums[largest]) {
             largest = left;
         }
+        
         if (right < nums.length && nums[right] > nums[largest]) {
             largest = right;
         }
