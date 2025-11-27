@@ -24,7 +24,7 @@ public class DisjointSet {
         if(rank[parA] == rank[parB]) {
             par[parB] = parA;
             rank[parA]++;
-        } else if(rank[parA] < rank[parB]) {
+        } else if(rank[parA] < rank[parB]) { 
             par[parA] = parB;
         } else {
             par[parB] = parA;

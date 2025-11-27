@@ -1,4 +1,3 @@
-package Java.Heaps;
 import java.util.*;
 
 public class Classroom {
@@ -21,7 +20,7 @@ public class Classroom {
                 x = par;
                 par = (x-1) / 2;
             }
-        }
+        } 
 
         public int peek() {
             // getMin opretion

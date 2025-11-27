@@ -157,7 +157,7 @@ public class BTBasic {
             Info leftInfo = diameter2(root.left);
             Info rightInfo = diameter2(root.right);
 
-            int diam = Math.max(Math.max(leftInfo.dia, rightInfo.dia), leftInfo.ht + rightInfo.ht + 1);
+            int diam = Math.max(Math.max(leftInfo.dia, rightInfo.dia), leftInfo.ht + rightInfo.ht);
             int ht = Math.max(leftInfo.ht, rightInfo.ht) + 1;
 
             return new Info(diam, ht);
@@ -166,19 +166,13 @@ public class BTBasic {
         public static boolean isIdentical(Node root, Node subRoot) {
             if (root == null && subRoot == null) {
                 return true;
-            } else if (root == null || subRoot == null || root.data != subRoot.data) {
+            }
+
+            if (root == null || subRoot == null || root.data != subRoot.data) {
                 return false;
             }
 
-            if (!isIdentical(root.left, subRoot.left)) {
-                return false;
-            }
-
-            if (!isIdentical(root.right, subRoot.right)) {
-                return false;
-            }
-
-            return true;
+            return isIdentical(root.left, subRoot.left) && isIdentical(root.right, subRoot.right);
         }
 
         public static boolean isSubtree(Node root, Node subRoot) {
@@ -186,10 +180,8 @@ public class BTBasic {
                 return false;
             }
 
-            if (root.data == subRoot.data) {
-                if (isIdentical(root, subRoot)) {
-                    return true;
-                }
+            if (isIdentical(root, subRoot)) {
+                return true;
             }
 
             return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
@@ -297,7 +289,7 @@ public class BTBasic {
             return path1.get(i - 1);
         }
 
-        public static Node lca2(Node root, int n1, int n2) {  // O(n)
+        public static Node lca2(Node root, int n1, int n2) { // O(n)
             if (root == null) {
                 return null;
             }
@@ -309,11 +301,11 @@ public class BTBasic {
             Node leftFound = lca2(root.left, n1, n2);
             Node rightFound = lca2(root.right, n1, n2);
 
-            if (leftFound == null) {  // both nodes were found at right part and left part returns null
+            if (leftFound == null) { // both nodes were found at right part and left part returns null
                 return rightFound;
-            } else if (rightFound == null) {  // both nodes found at left part and right part returns null
+            } else if (rightFound == null) { // both nodes found at left part and right part returns null
                 return leftFound;
-            } else {  // one node was found at right and one at left part
+            } else { // one node was found at right and one at left part
                 return root;
             }
         }
@@ -350,24 +342,24 @@ public class BTBasic {
         }
 
         public static int KthAncestor(Node root, int n, int k) {
-            if(root == null) {
+            if (root == null) {
                 return -1;
             }
-    
-            if(root.data == n) {
+
+            if (root.data == n) {
                 return 0;
             }
 
             int leftDist = KthAncestor(root.left, n, k);
             int rightDist = KthAncestor(root.right, n, k);
-    
-            if(leftDist == -1 && rightDist == -1) {
+
+            if (leftDist == -1 && rightDist == -1) {
                 return -1;
             }
-    
+
             int dist = Math.max(leftDist, rightDist);
 
-            if(dist + 1 == k) {
+            if (dist + 1 == k) {
                 System.out.println("Kth Ancestor : " + root.data);
             }
 
@@ -375,7 +367,7 @@ public class BTBasic {
         }
 
         public static int sumOfTree(Node root) {
-            if(root == null) {
+            if (root == null) {
                 return 0;
             }
 
@@ -385,14 +377,14 @@ public class BTBasic {
             int data = root.data;
             int newLeft = root.left == null ? 0 : root.left.data;
             int newRight = root.right == null ? 0 : root.right.data;
- 
+
             root.data = newLeft + leftChild + newRight + rightChild;
 
             return data;
         }
 
         public static void printSumTree(Node root) {
-            if(root == null) {
+            if (root == null) {
                 return;
             }
 
@@ -406,13 +398,13 @@ public class BTBasic {
         BinaryTree tree = new BinaryTree();
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
 
-    /*
-            1
-           / \
-          2   3
-         / \   \
-        4   5   6
-    */
+        /*
+         * 1
+         * / \
+         * 2 3
+         * / \ \
+         * 4 5 6
+         */
 
         Node root = tree.buildTree(nodes);
         System.out.println("Root : " + root.data);

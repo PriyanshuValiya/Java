@@ -71,7 +71,7 @@ public class isCycleBFS {
             }
 
             // case 1 -> next element is already visited but it's not parent of current element
-            else if(vis[e.dest] && e.dest != par) {
+            else if(e.dest != par) {
                 return true;
             }
 

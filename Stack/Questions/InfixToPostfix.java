@@ -53,4 +53,3 @@ public class InfixToPostfix {
         System.out.println("Postfix Expression: " + infixToPostfix(infixExpression));
     }
 }
-

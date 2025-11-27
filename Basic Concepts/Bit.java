@@ -46,7 +46,7 @@ class main {
 
 class main {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
+          sc = new Scanner(System.in);
         System.out.print("Enter 0 or 1 : ");
         int oper = sc.nextInt();
         // oper=1 -> set; oper=0 -> clear
